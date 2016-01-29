@@ -1,91 +1,289 @@
 <!doctype html>
-
 <html>
 <head>
-	<title>Catherine Wang's Portfolio</title>	
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="css/introHCI.css" rel="stylesheet">
-	<!-- this is a comment in HTML -->
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<style type="text/css">
+	html {
+		height: 100%;
+		background: #000000;
+	}
+	#element::-webkit-scrollbar { 
+    	display: none; 
+	}
+	body {
+		height: 100%;
+		margin: 0;
+		font:"Fira Sans Hair";
+	}
+	/*body:before, body:after {
+    	content: "";
+    	position: fixed;
+    	background: #FFFFFF;
+    	left: 10px;
+    	right: 10px;
+    	height: 10px;
+	}*/
+	body:before {
+   		top: 0px;
+	}
+	body:after {
+    	bottom: 0px;
+	}
+	section {
+		display: block;
+		height: 100%;
+	}
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->        
+	#home {
+		background: #FFFFFF;
+		border-left: 50px solid #000000;
+    	border-right: 50px solid #000000;  
+	}
+	#two {
+		background: #FFFFFF;
+		border-left: 50px solid #000000;
+    	border-right: 50px solid #000000; 	
+    }
+	#three{
+		background: #FFFFFF;
+		border-left: 50px solid #000000;
+    	border-right: 50px solid #000000;  
+    	border-bottom: 100px solid #000000;
+	}
+	header {
+		position: fixed;
+		width: 100%;
+  		height: 60px;
+   		top: 0;  		
+		left:0;
+		transition: top 0.7s ease-in-out;
+		z-index: 2;
+	}
+	.scroll-up {
+    	top: -60px;
+	}
+	.container {
+		float: right;
+		margin-right: 70px;
+	}
+	.nav {
+		white-space: nowrap;
+	}
+	.nav li{
+ 		display: inline-block;
+   		position: relative;
+   		list-style-type: none;
+	}
+	.nav li a{
+  		float: right;
+		line-height: 25px;
+		color: #2B667F;
+		position: relative;
+		font-size: 2vh;
+		overflow: hidden;
+   		padding:0 12px;
+   		font-family: 'Fira Sans';
+   		z-index:2;
+   		text-decoration: none;
+   		margin-top: 10px;
+	}
+	.nav li:after{
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 0;
+		top: 50px;
+		transition: 1000ms;
+	}
+	.nav li:hover:after{
+		height: 103%;
+		top: 5px;
+		background:#1B262B;
+	}
+	h1 {
+		font-weight: lighter;
+		font-size: 80px;
+		color: #2B667F;
+		font-family: "Open Sans";
+		position: absolute;
+		z-index: 12;
+		margin: 0;
+		left: 50%;
+		top: 300px;
+	}
+  	h7 {
+		font-weight: normal;
+		font-size: 16px;
+		color: #2B667F;
+		font-family:"Fira Sans";
+		position: absolute;
+		z-index: 12;
+		margin: 0;
+		left: 55%;
+		top: 410px;
+	}
+	#intro {
+		padding: 15px;
+		text-align: center;
+		color: white;
+	}
+	#down {
+		position: relative;
+		margin-top: 700px;
+  		left: 50%;
+    	margin-right: -50%;
+    	transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		opacity: 0.7;
+	}
+
+   	h2 {
+		position: absolute;
+		left: 50%;
+		margin-top: 10%;
+    	margin-right: -50%;
+    	transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		font-family: "Fira Sans";
+		font-size: 70px;
+		font-weight: normal;
+	}
+	.box {
+		width: 100%;
+		height: 500px;
+	}
+
+	a h3 {
+		position: absolute;
+		font-family: "Industry Inc";
+		font-size: 38px;
+		color: #FFFFFF;
+		opacity: 0.7;
+		text-shadow:  0 0 0.2em #FFFFFF;
+		-webkit-transform: rotate(270deg);
+		-moz-transform: rotate(270deg);
+		-o-transform: rotate(270deg);
+		margin-left: 178px;
+		margin-top: 265px;
+		opacity: 0;
+		-webkit-transition: opacity 800ms;
+  		-moz-transition: opacity 800ms;
+  		-o-transition: opacity 800ms;
+  		transition: opacity 800ms;
+	}
+	a:hover h3{
+		opacity: 1;
+	}
+	a h4 {
+		position: absolute;
+		font-family: "Fira Sans";
+		font-weight: normal;
+		font-size: 38px;
+		color: #FFFFFF;
+		opacity: 0.7;
+		text-shadow:  0 0 0.2em #FFFFFF;
+		margin-left: 280px;
+		margin-top: 365px;
+		opacity: 0;
+		-webkit-transition: opacity 800ms;
+  -moz-transition: opacity 800ms;
+  -o-transition: opacity 800ms;
+  transition: opacity 800ms;
+	}
+	a:hover h4 {
+		opacity: 1;
+	}
+	   	h5 {
+		position: absolute;
+		left: 50%;
+		margin-top: 10%;
+    	margin-right: -50%;
+    	transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		font-family: "Fira Sans";
+		font-size: 70px;
+		font-weight: normal;
+	}
+	   	h6 {
+		position: absolute;
+		left: 50%;
+		margin-top: 10%;
+    	margin-right: -50%;
+    	transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		font-family: "Fira Sans";
+		font-size: 70px;
+		font-weight: normal;
+	}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script> 
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('navigation').addClass('scroll-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('scroll-up').addClass('navigation');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script>
 </head>
 
-<body>
-	<div class="container"> 
-		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
-		<!-- p means paragraph -->
-		<div class="jumbotron">
-			<h1>Catherine Wang</h1>
-			<p>human-computer interaction &middot; social computing &middot; crowdsourcing</p>
-		</div>
-
-		<h4>Projects</h4>
-		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
-		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
-		<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
-	
-		<div class="project" id="project1">
-			<a href="project.html" class="thumbnail">
-				<img src="images/lorempixel.people.1.jpeg" alt="Lorem Pixel image" class="img">
-				<p>Waiting in Line</p>
-			</a>
-		</div>
-		<div class="project" id="project2">
-			<a href="project.html" class="thumbnail">
-				<img src="images/lorempixel.city.1.jpeg" alt="Lorem Pixel image" class="img">
-				<p>Needfinding</p>
-			</a>
-		</div>
-		<div class="project" id="project3">
-			<a href="project.html" class="thumbnail">
-				<img src="images/lorempixel.technics.1.jpeg" alt="Lorem Pixel image" class="img">
-				<p>Prototyping</p>
-			</a>
-		</div>
-		<div class="project" id="project4">
-			<a href="project.html" class="thumbnail">
-				<img src="images/lorempixel.abstract.1.jpeg" alt="Lorem Pixel image" class="img">
-				<p>Heuristic Evaluation</p>
-			</a>
-		</div>
-		<div class="project" id="project5">
-			<a href="project.html" class="thumbnail">
-				<img src="images/lorempixel.abstract.8.jpeg" alt="Lorem Pixel image" class="img">
-				<p>Visualization</p>
-			</a>
-		</div>
-		<div class="project" id="project6">
-			<a href="project.html" class="thumbnail">
-				<img src="images/lorempixel.people.2.jpeg" alt="Lorem Pixel image" class="img">
-				<p>Social design</p>
-			</a>
-		</div>
-		<div class="project" id="project7">
-			<a href="project.html" class="thumbnail">
-				<img src="images/lorempixel.technics.2.jpeg" alt="Lorem Pixel image" class="img">
-				<p>Gestural interaction</p>
-			</a>
-		</div>
-		<div class="project" id="project8">
-			<a href="project.html" class="thumbnail">
-				<img src="images/lorempixel.city.2.jpeg" alt="Lorem Pixel image" class="img">
-				<p>Design tools</p>
-			</a>
-		</div>
-	</div>
-	<!-- Bootstrap -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="css/introHCI.css" rel="stylesheet">
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<!-- Include all compiled plugins (blelow), or include individual files as needed -->
-	<script src="js/bootstrap.min.js"></script>
+<body id="element">
+		<header id= "navigation">
+        	<div class="container">
+     			<ul class="nav">
+       				<li><a href="#home">HOME</a></li>
+       				<li><a href="#two">ABOUT ME</a></li>
+       				<li><a href="#three">FEATURED WORK</a></li>       
+                	<li><a href="#four">GRAPHICS & ILLUSTRATIONS</a></li>    
+                	<li><a href="#five">PHOTOGRAPHY & VIDEOS</a></li>
+     			</ul>
+   </div>
+        </header>
+		
+	<section id = "home">
+<h1>C   A   T   H   E   R   I   N   E</h1>
+<h7>new media artist ||  graphic designer  ||  front end developer</h7>
+    </section>
+	<section id="two">
+    </section>
+    <section id = "three">
+    </section>
+    
 </body>
 </html>
